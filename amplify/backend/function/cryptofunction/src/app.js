@@ -25,6 +25,17 @@ app.use(function(req, res, next) {
   next()
 });
 
+// Creating the coins route using the textbook code
+app.get('/coins', function(req, res) {
+  const coins = [
+    { name: 'Bitcoin', symbol: 'BTC', price_usd: "10000" },
+    { name: 'Ethereum', symbol: 'ETH', price_usd: "400" },
+    { name: 'Litecoin', symbol: 'LTC', price_usd: "150" }
+  ]
+  res.json({
+    coins
+  })
+})
 
 /**********************
  * Example get method *
