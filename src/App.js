@@ -15,7 +15,6 @@ const App = () => {
       updateInput({ ...input, [type]: value });
     }
 
-
     // Define function to all API
     const fetchCoins = async() => {
       const { limit, start } = input;
@@ -30,6 +29,13 @@ const App = () => {
   
     return (
       <div className="App">
+		 <input placeholder="start"
+        	onChange={e => updateInputValues('start', e.target.value)}
+        />
+		<input placeholder="limit" 
+			onChange={e => updateInputValues('limit', e.target.value)}
+		/>
+        <button onClick={fetchCoins}>Fetch Coins</button>
         {
           coins.map((coin, index) => (
             <div key={index}>
@@ -45,15 +51,6 @@ const App = () => {
 export default App;
 
 
-// <input
-//           onChange={e => updateInputValues('limit', e.target.value)}
-//           placeholder="limit"
-//           />
-//         <input
-//           placeholder="start"
-//           onChange={e => updateInputValues('start', e.target.value)}
-//         />
 
 
 
-// Add input fields to the UI for user input
