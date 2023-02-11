@@ -44,9 +44,9 @@ const App = () => {
         <button onClick={fetchCoins}>Fetch Coins</button>
 		
 		{loading && 
-		<div className="container-fluid d-flex align-items-center">
+		<div className="d-flex jusify-content-center align-items-center">
 			<strong>Loading...</strong>
-			<div className="spinner-border ms-auto" 
+			<div className="spinner-border" 
 				role="status" aria-hidden="true">
 			</div>
 		</div>
