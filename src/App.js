@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { API } from 'aws-amplify'
+import { API } from 'aws-amplify';
+// import Spinner from 'react-bootstrap/Spinner';
 import './App.css';
 
 
@@ -9,6 +10,9 @@ const App = () => {
 
     // Create additional state to hold user input for limit and start properties
     const [input, updateInput] = useState({ limit: 5, start: 0 });
+	
+	// Create a variable for loading screen
+	const [loading, updateLoading] = useState(true);
 
     // Create a new function to allow users to update the input values
     function updateInputValues(type, value) {
@@ -17,9 +21,11 @@ const App = () => {
 
     // Define function to all API
     const fetchCoins = async() => {
+		updateLoading(true);
       const { limit, start } = input;
       const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`);
       updateCoins(data.coins);
+	  updateLoading(false);
     }
   
     // Call fetchCoins function when component loads
@@ -36,8 +42,18 @@ const App = () => {
 			onChange={e => updateInputValues('limit', e.target.value)}
 		/>
         <button onClick={fetchCoins}>Fetch Coins</button>
-        {
-          coins.map((coin, index) => (
+		
+		{loading && 
+		<div className="container-fluid d-flex align-items-center">
+			<strong>Loading...</strong>
+			<div className="spinner-border ms-auto" 
+				role="status" aria-hidden="true">
+			</div>
+		</div>
+		}
+        
+		{
+          !loading && coins.map((coin, index) => (
             <div key={index}>
               <h2>{coin.name} - {coin.symbol}</h2>
               <h5>${coin.price_usd}</h5>
