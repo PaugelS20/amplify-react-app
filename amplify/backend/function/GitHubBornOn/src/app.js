@@ -6,9 +6,6 @@ or in the "license" file accompanying this file. This file is distributed on an 
 See the License for the specific language governing permissions and limitations under the License.
 */
 
-
-
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
@@ -29,21 +26,22 @@ app.use(function(req, res, next) {
 // Import axios
 const axios = require('axios')
 
-app.get('/coins', function(req, res) {
+app.get('/born', function(req, res) {
   // Define base url
-  let apiUrl = `https://api.coinlore.com/api/tickers?start=0&limit=10`
+  let apiUrl = `https://api.github.com/users/Paugels20?created_at=`
 
   // Check if there are any query string parameters
   // If so, reset the base url to include them
   if (req.apiGateway && req.apiGateway.event.queryStringParameters) {
-   const { start = 0, limit = 10 } = req.apiGateway.event.queryStringParameters
-   apiUrl = `https://api.coinlore.com/api/tickers/?start=${start}&limit=${limit}`
+   const { created_at } = req.apiGateway.event.queryStringParameters
+   apiUrl = `https://api.github.com/users/Paugels20/?created_at=${created_at}`
+  //  apiUrl = `https://api.coinlore.com/api/tickers/?start=${start}&limit=${limit}`
   }
 
   // Call API and return response
   axios.get(apiUrl)
     .then(response => {
-      res.json({ coins: response.data.data })
+      res.json({ born: response.data.data })
     })
     .catch(err => res.json({ error: err }))
 })
