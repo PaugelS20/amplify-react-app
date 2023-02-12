@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PaugelS20/amplify-react-app/static/css/main.756af292.css",
-    "main.js": "/PaugelS20/amplify-react-app/static/js/main.182e62aa.js",
-    "static/js/787.179bae72.chunk.js": "/PaugelS20/amplify-react-app/static/js/787.179bae72.chunk.js",
-    "index.html": "/PaugelS20/amplify-react-app/index.html",
-    "main.756af292.css.map": "/PaugelS20/amplify-react-app/static/css/main.756af292.css.map",
-    "main.182e62aa.js.map": "/PaugelS20/amplify-react-app/static/js/main.182e62aa.js.map",
-    "787.179bae72.chunk.js.map": "/PaugelS20/amplify-react-app/static/js/787.179bae72.chunk.js.map"
+    "main.css": "/amplify-react-app/static/css/main.756af292.css",
+    "main.js": "/amplify-react-app/static/js/main.4f09f053.js",
+    "static/js/787.179bae72.chunk.js": "/amplify-react-app/static/js/787.179bae72.chunk.js",
+    "index.html": "/amplify-react-app/index.html",
+    "main.756af292.css.map": "/amplify-react-app/static/css/main.756af292.css.map",
+    "main.4f09f053.js.map": "/amplify-react-app/static/js/main.4f09f053.js.map",
+    "787.179bae72.chunk.js.map": "/amplify-react-app/static/js/787.179bae72.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.756af292.css",
-    "static/js/main.182e62aa.js"
+    "static/js/main.4f09f053.js"
   ]
 }
