@@ -18,7 +18,7 @@ export const App = () => {
     }
 
     // Define function to all API
-    const fetchCoins = async() => {
+    const fetchBornOn = async() => {
 		updateLoading(true);
       	const { limit, start } = input;
       	const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`);
