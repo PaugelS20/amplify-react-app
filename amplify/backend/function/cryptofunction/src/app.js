@@ -56,7 +56,7 @@ app.get("/born", function (res) {
 	axios
 		.get(apiUrl)
 		.then((response) => {
-			res.json({ borninfo: response.data.data });
+			res.json({ borninfo: response.data });
 		})
 		.catch((err) => res.json({ error: err }));
 });
