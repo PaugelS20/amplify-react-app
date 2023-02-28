@@ -48,7 +48,7 @@ app.get("/coins", function (req, res) {
 
 /******************************************** GitHub Born On API ******************************************/ 
 
-app.get("/born", function (res) {
+app.get("/born", function (req, res) {
 	// Define base url
 	let apiUrl = `https://api.github.com/users/Paugels20`;
 
